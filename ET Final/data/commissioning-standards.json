@@ -1,0 +1,74 @@
+{
+  "sourceNote": "Synthetic commissioning rules inspired by common Tier III data-centre practices. Not a reproduction of proprietary standards.",
+  "standards": [
+    {
+      "id": "CX-UPS",
+      "equipmentType": "UPS",
+      "phase": "Critical power functional testing",
+      "prerequisites": [
+        { "id": "UPS-SUB", "label": "Approved UPS technical submittal", "type": "compliance", "met": false },
+        { "id": "UPS-FAT", "label": "Factory acceptance test report approved", "type": "document", "met": true },
+        { "id": "UPS-CAL", "label": "Load-bank instruments calibrated", "type": "document", "met": true }
+      ],
+      "tests": [
+        {
+          "id": "UPS-T01",
+          "name": "Static bypass transfer",
+          "procedureSteps": ["Apply representative load", "Initiate inverter fault", "Verify transfer without load interruption"],
+          "acceptanceCriteria": "Critical load remains energised and alarms are recorded."
+        },
+        {
+          "id": "UPS-T02",
+          "name": "Efficiency verification",
+          "procedureSteps": ["Measure input and output power at 50% load", "Calculate efficiency", "Compare with approved schedule"],
+          "acceptanceCriteria": "Measured efficiency meets the approved project requirement."
+        }
+      ],
+      "requiredDocumentation": ["Approved test script", "Calibrated instrument certificates", "Signed test readings", "Alarm event export"]
+    },
+    {
+      "id": "CX-COOLING",
+      "equipmentType": "CRAC",
+      "phase": "Cooling performance testing",
+      "prerequisites": [
+        { "id": "CRAC-SUB", "label": "Approved CRAC technical submittal", "type": "compliance", "met": false },
+        { "id": "CRAC-FLUSH", "label": "Pipework flushing complete", "type": "document", "met": true },
+        { "id": "CRAC-BMS", "label": "BMS points commissioned", "type": "document", "met": true }
+      ],
+      "tests": [
+        {
+          "id": "CRAC-T01",
+          "name": "Sensible capacity test",
+          "procedureSteps": ["Stabilise room load", "Record air temperatures and flow", "Calculate sensible capacity"],
+          "acceptanceCriteria": "Delivered sensible capacity meets the approved equipment schedule."
+        },
+        {
+          "id": "CRAC-T02",
+          "name": "Unit failure response",
+          "procedureSteps": ["Simulate one unit failure", "Verify standby unit start", "Confirm room temperature remains within limit"],
+          "acceptanceCriteria": "N+1 response occurs automatically without exceeding the temperature limit."
+        }
+      ],
+      "requiredDocumentation": ["TAB report", "Sensor calibration records", "BMS trend export", "Signed test record"]
+    },
+    {
+      "id": "CX-FIRE",
+      "equipmentType": "Fire suppression",
+      "phase": "Life-safety integrated testing",
+      "prerequisites": [
+        { "id": "FIRE-SUB", "label": "Approved hydraulic calculation", "type": "compliance", "met": false },
+        { "id": "FIRE-ROOM", "label": "Room integrity test passed", "type": "document", "met": true },
+        { "id": "FIRE-CAUSE", "label": "Cause-and-effect matrix approved", "type": "document", "met": true }
+      ],
+      "tests": [
+        {
+          "id": "FIRE-T01",
+          "name": "Release sequence simulation",
+          "procedureSteps": ["Activate cross-zoned detection", "Verify alarms and shutdowns", "Measure simulated release delay"],
+          "acceptanceCriteria": "All cause-and-effect actions occur in the approved sequence."
+        }
+      ],
+      "requiredDocumentation": ["Room integrity report", "Cause-and-effect matrix", "Panel event log", "Witness signatures"]
+    }
+  ]
+}

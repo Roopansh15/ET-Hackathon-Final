@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EPC Guardian data centre project intelligence prototype">
+    <title>EPC Guardian</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">EG</span>
+          <div>
+            <strong>EPC Guardian</strong>
+            <span>Project intelligence</span>
+          </div>
+        </div>
+
+        <nav aria-label="Primary navigation">
+          <button class="nav-item active" data-view="overview">Overview</button>
+          <button class="nav-item" data-view="assistant">Ask project</button>
+          <button class="nav-item" data-view="compliance">Compliance review</button>
+          <button class="nav-item" data-view="schedule">Schedule impact</button>
+          <button class="nav-item" data-view="commissioning">Commissioning</button>
+          <button class="nav-item" data-view="supply">Supply chain</button>
+          <button class="nav-item" data-view="documents">Evidence library</button>
+          <button class="nav-item" data-view="validation">Validation</button>
+        </nav>
+
+        <div class="sidebar-note">
+          <span class="status-dot"></span>
+          Synthetic demo data
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="project-name">Loading project...</p>
+            <h1 id="page-title">Project overview</h1>
+          </div>
+          <div class="topbar-actions">
+            <span class="badge neutral" id="ai-status">AI fallback</span>
+            <span class="reviewer">Reviewer: Project QA</span>
+            <button class="primary-button" id="run-review">Run review</button>
+          </div>
+        </header>
+
+        <section class="view active" id="overview-view">
+          <div class="metrics" aria-label="Project metrics">
+            <article class="metric">
+              <span>Project completion</span>
+              <strong id="project-completion">--</strong>
+              <div class="progress"><span id="project-progress"></span></div>
+            </article>
+            <article class="metric">
+              <span>Open deviations</span>
+              <strong class="danger-text" id="open-deviations">--</strong>
+              <small id="deviation-summary">Checking project data</small>
+            </article>
+            <article class="metric">
+              <span>Documents indexed</span>
+              <strong id="documents-indexed">--</strong>
+              <small id="documents-added">Loading</small>
+            </article>
+            <article class="metric metric-with-tooltip" tabindex="0">
+              <span>Review time saved</span>
+              <strong id="hours-saved">--</strong>
+              <small>Measured against manual page review</small>
+              <div class="metric-tooltip" id="effort-methodology">Loading calculation</div>
+            </article>
+          </div>
+
+          <article class="panel scenario-panel">
+            <div class="panel-heading compact">
+              <div>
+                <p class="eyebrow">Portfolio compliance</p>
+                <h2>Five equipment checks from independent evidence pairs</h2>
+              </div>
+              <span class="badge neutral" id="portfolio-summary">Loading</span>
+            </div>
+            <div class="scenario-list" id="scenario-list"></div>
+          </article>
+
+          <div class="content-grid">
+            <article class="panel priority-panel" id="finding-panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow" id="finding-label">Compliance result</p>
+                  <h2 id="finding-title">Analysing project requirement</h2>
+                </div>
+                <span class="badge neutral" id="finding-severity">Pending</span>
+              </div>
+
+              <div class="comparison">
+                <div>
+                  <span>Required</span>
+                  <strong id="required-value">--</strong>
+                  <small>at 50% rated load</small>
+                </div>
+                <div class="comparison-arrow" aria-hidden="true">vs</div>
+                <div>
+                  <span>Submitted</span>
+                  <strong class="danger-text" id="submitted-value">--</strong>
+                  <small id="variance-text">Calculating</small>
+                </div>
+              </div>
+
+              <div class="evidence-row">
+                <button class="evidence-link" data-document="spec" id="spec-citation">
+                  Loading specification citation
+                </button>
+                <button class="evidence-link" data-document="submittal" id="submittal-citation">
+                  Loading submittal citation
+                </button>
+              </div>
+
+              <div class="action-row">
+                <button class="secondary-button" data-open-view="compliance">Inspect evidence</button>
+                <button class="primary-button" id="draft-rfi">Draft corrective RFI</button>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-heading compact">
+                <h2>Downstream exposure</h2>
+                <span class="badge neutral" id="impact-status">Pending</span>
+              </div>
+              <dl class="impact-list">
+                <div><dt>Next gate</dt><dd id="next-gate">--</dd></div>
+                <div><dt>Starts in</dt><dd id="starts-in">--</dd></div>
+                <div><dt>Potential delay</dt><dd id="potential-delay">--</dd></div>
+                <div><dt>Affected tasks</dt><dd id="affected-tasks">--</dd></div>
+                <div><dt>Cost exposure</dt><dd id="cost-exposure">--</dd></div>
+              </dl>
+              <button class="text-button" data-open-view="schedule">View dependency path</button>
+            </article>
+          </div>
+
+          <article class="panel workflow-panel">
+            <div class="panel-heading compact">
+              <div>
+                <p class="eyebrow">Review workflow</p>
+                <h2>From document evidence to controlled action</h2>
+              </div>
+              <span class="badge neutral" id="workflow-status">Checking workflow</span>
+            </div>
+            <div class="workflow">
+              <div class="workflow-step complete"><span>1</span><strong>Extract</strong><small>Values and context</small></div>
+              <div class="workflow-step complete"><span>2</span><strong>Compare</strong><small>Requirement vs submittal</small></div>
+              <div class="workflow-step current"><span>3</span><strong>Assess</strong><small>Schedule and cost</small></div>
+              <div class="workflow-step"><span>4</span><strong>Review</strong><small>Engineer decision</small></div>
+              <div class="workflow-step"><span>5</span><strong>Issue</strong><small>RFI and audit trail</small></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="assistant-view">
+          <div class="section-intro">
+            <div>
+              <p class="eyebrow">Cited project intelligence</p>
+              <h2>Ask across specifications, submittals, schedules, and RFIs</h2>
+            </div>
+            <span class="badge success">Evidence required</span>
+          </div>
+
+          <form class="ask-form" id="ask-form">
+            <label class="ask-label" for="ask-input">Project question</label>
+            <div class="ask-controls">
+              <input
+                id="ask-input"
+                type="search"
+                autocomplete="off"
+                placeholder="Example: What UPS efficiency is required at 50% load?"
+              >
+              <button class="primary-button" type="submit" id="ask-submit">Search evidence</button>
+            </div>
+          </form>
+
+          <div class="suggested-questions" aria-label="Suggested questions">
+            <button type="button" data-question="What UPS efficiency is required at 50% load?">Required efficiency</button>
+            <button type="button" data-question="What efficiency did VoltEdge submit?">Vendor submission</button>
+            <button type="button" data-question="Is an approved deviation already recorded?">Approved deviation</button>
+            <button type="button" data-question="What is the cost exposure of late UPS approval?">Cost exposure</button>
+          </div>
+
+          <article class="answer-panel" id="answer-panel">
+            <div class="answer-empty" id="answer-empty">
+              <strong>Ask a project question</strong>
+              <p>Answers are returned only when supporting document and page evidence is available.</p>
+            </div>
+            <div id="answer-content" hidden>
+              <div class="panel-heading compact">
+                <div>
+                  <p class="eyebrow">Evidence-grounded answer</p>
+                  <h2 id="answer-question">Project question</h2>
+                </div>
+                <span class="confidence" id="answer-confidence">Confidence --</span>
+              </div>
+              <p class="answer-text" id="answer-text"></p>
+              <div class="citation-list" id="citation-list"></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="compliance-view">
+          <div class="section-intro">
+            <div>
+              <p class="eyebrow" id="finding-id">Finding</p>
+              <h2>Evidence-backed compliance review</h2>
+            </div>
+            <span class="confidence" id="finding-confidence">Confidence --</span>
+          </div>
+          <div class="document-grid">
+            <article class="document-panel" id="spec-document">
+              <div class="document-header">
+                <div><span>Project requirement</span><strong id="spec-document-name">Loading</strong></div>
+                <span id="spec-page">Page --</span>
+              </div>
+              <p id="requirement-text">Loading requirement text...</p>
+              <dl><div><dt>Extracted field</dt><dd id="requirement-field">--</dd></div><div><dt>Rule</dt><dd id="requirement-rule">--</dd></div></dl>
+            </article>
+            <article class="document-panel" id="submittal-document">
+              <div class="document-header">
+                <div><span>Vendor submittal</span><strong id="submittal-document-name">Loading</strong></div>
+                <span id="submittal-page">Page --</span>
+              </div>
+              <p id="submittal-text">Loading submittal text...</p>
+              <dl><div><dt>Extracted field</dt><dd id="submittal-field">--</dd></div><div><dt>Observed value</dt><dd id="observed-value">--</dd></div></dl>
+            </article>
+          </div>
+          <article class="decision-panel" id="decision-panel">
+            <div><span class="badge neutral" id="decision-status">Pending</span><h2 id="decision-title">Analysing submitted value</h2><p id="decision-explanation">Waiting for project data.</p></div>
+            <div class="decision-actions"><button class="secondary-button" id="request-review">Request expert review</button><button class="primary-button" id="draft-rfi-secondary">Draft RFI</button></div>
+          </article>
+
+          <article class="panel audit-panel">
+            <div class="panel-heading compact">
+              <div>
+                <p class="eyebrow">Decision governance</p>
+                <h2>Audit trail</h2>
+              </div>
+              <span class="badge neutral">Human in the loop</span>
+            </div>
+            <div class="audit-list" id="audit-list"></div>
+          </article>
+
+          <article class="panel ai-analyzer">
+            <div class="panel-heading compact">
+              <div>
+                <p class="eyebrow">Specification extraction agent</p>
+                <h2>Analyse a new specification and submittal</h2>
+              </div>
+              <span class="badge neutral" id="agent-mode">Ready</span>
+            </div>
+            <form id="ai-analysis-form" class="ai-analysis-form">
+              <label>Specification text
+                <textarea id="ai-spec-text" rows="4">Generator sound pressure level shall not exceed 85 dBA measured at 1 metre.</textarea>
+              </label>
+              <label>Vendor submittal text
+                <textarea id="ai-submittal-text" rows="4">The proposed generator sound pressure level at 1 metre is 89 dBA.</textarea>
+              </label>
+              <button class="primary-button" type="submit" id="ai-analyze-button">Run extraction agent</button>
+            </form>
+            <div class="agent-result" id="agent-result" hidden></div>
+          </article>
+        </section>
+
+        <section class="view" id="schedule-view">
+          <div class="section-intro">
+            <div><p class="eyebrow">Critical path analysis</p><h2 id="schedule-heading">Loading dependency path</h2></div>
+            <span class="badge neutral" id="schedule-badge">Pending</span>
+          </div>
+          <div class="timeline" id="schedule-timeline" aria-label="Schedule dependency path"></div>
+          <article class="panel forecast-panel">
+            <div class="forecast-control">
+              <label for="response-days">Vendor response assumption: <strong id="response-days-value">7 days</strong></label>
+              <input id="response-days" type="range" min="1" max="14" value="7">
+            </div>
+            <div class="forecast-comparison">
+              <div><span>Current trajectory</span><strong id="current-delay">--</strong><small>critical-path days</small></div>
+              <div><span>What-if trajectory</span><strong id="mitigated-delay">--</strong><small>critical-path days</small></div>
+              <div><span>Portfolio exposure</span><strong id="forecast-cost">--</strong><small>response-time adjusted</small></div>
+            </div>
+            <div class="mitigation-list" id="mitigation-list"></div>
+          </article>
+          <article class="assumption-box">
+            <strong>How the estimate was calculated</strong>
+            <p id="schedule-assumption">Loading calculation assumptions.</p>
+          </article>
+        </section>
+
+        <section class="view" id="commissioning-view">
+          <div class="section-intro">
+            <div><p class="eyebrow">Test readiness</p><h2>Commissioning sequence and prerequisite control</h2></div>
+            <span class="badge neutral" id="commissioning-summary">Loading</span>
+          </div>
+          <div class="commissioning-plans" id="commissioning-plans"></div>
+        </section>
+
+        <section class="view" id="supply-view">
+          <div class="section-intro">
+            <div><p class="eyebrow">Critical equipment logistics</p><h2>Delivery alignment and early risk alerts</h2></div>
+            <span class="badge neutral" id="supply-summary">Loading</span>
+          </div>
+          <div class="supply-layout">
+            <div class="equipment-grid" id="equipment-grid"></div>
+            <aside class="panel alert-panel">
+              <div class="panel-heading compact"><h2>Active alerts</h2><span class="badge warning" id="alert-count">--</span></div>
+              <div class="alert-list" id="alert-list"></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="documents-view">
+          <div class="section-intro">
+            <div><p class="eyebrow">Evidence library</p><h2>Indexed project records</h2></div>
+            <button class="primary-button">Add documents</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Document</th><th>Type</th><th>Revision</th><th>Indexed</th><th>Status</th></tr></thead>
+              <tbody id="documents-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="view" id="validation-view">
+          <div class="section-intro">
+            <div>
+              <p class="eyebrow">Measured quality</p>
+              <h2>Retrieval and compliance validation</h2>
+            </div>
+            <button class="primary-button" id="run-evaluation">Run benchmark</button>
+          </div>
+
+          <div class="metrics validation-metrics">
+            <article class="metric">
+              <span>Top citation accuracy</span>
+              <strong id="evaluation-accuracy">--</strong>
+              <small>Correct document and page</small>
+            </article>
+            <article class="metric">
+              <span>Citation coverage</span>
+              <strong id="evaluation-coverage">--</strong>
+              <small>Answers with evidence</small>
+            </article>
+            <article class="metric">
+              <span>Compliance tests</span>
+              <strong id="test-count">22/22</strong>
+              <small>Logic, extraction, risk, and workflow</small>
+            </article>
+            <article class="metric">
+              <span>Benchmark questions</span>
+              <strong id="evaluation-total">--</strong>
+              <small>Synthetic expert-labelled set</small>
+            </article>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Question</th><th>Expected evidence</th><th>Retrieved evidence</th><th>Result</th></tr>
+              </thead>
+              <tbody id="evaluation-table-body"></tbody>
+            </table>
+          </div>
+          <article class="assumption-box validation-note">
+            <strong>Honest prototype boundary</strong>
+            <p>The benchmark uses synthetic but realistic EPC records. Production validation would use a larger, independently labelled client dataset and domain-expert review.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="rfi-dialog">
+      <form method="dialog">
+        <div class="dialog-heading">
+          <div><p class="eyebrow">Draft only</p><h2 id="rfi-title">Corrective RFI</h2></div>
+          <button class="close-button" value="cancel" aria-label="Close">x</button>
+        </div>
+        <label>Question<textarea rows="5" id="rfi-question"></textarea></label>
+        <label>Evidence<textarea rows="4" id="rfi-evidence" readonly></textarea></label>
+        <div class="dialog-actions">
+          <button class="secondary-button" value="cancel">Cancel</button>
+          <button class="primary-button" value="confirm">Approve for issue</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>

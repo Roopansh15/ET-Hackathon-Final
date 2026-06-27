@@ -1,0 +1,59 @@
+{
+  "equipment": [
+    {
+      "id": "EQ-UPS-01",
+      "description": "VoltEdge VX900 UPS modules",
+      "vendor": "VoltEdge Systems",
+      "origin": "Pune, India",
+      "status": "manufactured",
+      "expectedDeliveryDate": "2026-07-18",
+      "requiredOnSiteDate": "2026-07-15",
+      "actualDeliveryDate": null,
+      "riskFlags": ["quality issue: efficiency deviation remains open"]
+    },
+    {
+      "id": "EQ-GEN-01",
+      "description": "PowerCore G2500 generators",
+      "vendor": "PowerCore Energy",
+      "origin": "Chennai, India",
+      "status": "in-transit",
+      "expectedDeliveryDate": "2026-07-05",
+      "requiredOnSiteDate": "2026-07-08",
+      "actualDeliveryDate": null,
+      "riskFlags": []
+    },
+    {
+      "id": "EQ-CRAC-01",
+      "description": "ThermaFlow C150 CRAC units",
+      "vendor": "ThermaFlow Cooling",
+      "origin": "Shenzhen, China",
+      "status": "shipped",
+      "expectedDeliveryDate": "2026-08-12",
+      "requiredOnSiteDate": "2026-08-02",
+      "actualDeliveryDate": null,
+      "riskFlags": ["customs documentation incomplete"]
+    },
+    {
+      "id": "EQ-PDU-01",
+      "description": "GridLine PDU-400 units",
+      "vendor": "GridLine Electrical",
+      "origin": "Noida, India",
+      "status": "delivered",
+      "expectedDeliveryDate": "2026-06-18",
+      "requiredOnSiteDate": "2026-06-20",
+      "actualDeliveryDate": "2026-06-17",
+      "riskFlags": []
+    },
+    {
+      "id": "EQ-FIRE-01",
+      "description": "SafeGas IG-541 cylinders and controls",
+      "vendor": "SafeGas Protection",
+      "origin": "Hyderabad, India",
+      "status": "ordered",
+      "expectedDeliveryDate": "2026-07-25",
+      "requiredOnSiteDate": "2026-07-30",
+      "actualDeliveryDate": null,
+      "riskFlags": []
+    }
+  ]
+}

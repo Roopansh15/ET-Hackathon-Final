@@ -1,0 +1,12 @@
+{
+  "name": "epc-guardian",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Learning-first ET AI Hackathon 2026 prototype",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/app.js && node --test",
+    "verify:ai": "node scripts/verify-ai.mjs"
+  }
+}

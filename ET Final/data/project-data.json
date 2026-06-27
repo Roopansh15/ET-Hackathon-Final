@@ -1,0 +1,276 @@
+{
+  "project": {
+    "name": "Mumbai DC-01",
+    "phase": "Procurement and commissioning readiness",
+    "completion": 68,
+    "documentsIndexed": 14,
+    "pagesIndexed": 412,
+    "documentsAddedThisWeek": 5
+  },
+  "scenarios": [
+    {
+      "id": "ups-efficiency",
+      "equipmentType": "UPS",
+      "finding": {
+        "id": "NCR-003",
+        "rfiId": "RFI-EL-027",
+        "title": "UPS efficiency below project requirement",
+        "shortTitle": "UPS efficiency deviation",
+        "confidence": 98
+      },
+      "requirement": {
+        "id": "ELEC-UPS-042",
+        "document": "Electrical Design Specification Rev C",
+        "page": 87,
+        "text": "UPS module efficiency shall be at least 96.5% at 50% rated load.",
+        "field": "efficiency_at_50_load",
+        "label": "Efficiency at 50% load",
+        "operator": ">=",
+        "value": 96.5,
+        "unit": "%"
+      },
+      "submittal": {
+        "id": "SUB-UPS-118",
+        "product": "VoltEdge VX900 UPS",
+        "document": "VoltEdge VX900 Technical Datasheet Rev 2",
+        "page": 14,
+        "text": "Double-conversion operating efficiency at 50% load: 95.2%.",
+        "field": "efficiency_at_50_load",
+        "value": 95.2,
+        "unit": "%"
+      },
+      "scheduleImpact": {
+        "task": "UPS Factory Acceptance Test",
+        "taskId": "CX-240",
+        "startsInDays": 12,
+        "estimatedDelayDays": 9,
+        "affectedTasks": 4,
+        "criticalPath": true,
+        "costExposure": 1800000,
+        "baseResponseDays": 7,
+        "delayAssumptions": [
+          { "days": 3, "label": "vendor clarification" },
+          { "days": 4, "label": "revised submission" },
+          { "days": 2, "label": "engineering review" }
+        ],
+        "dependencyPath": [
+          { "offsetDays": 0, "task": "UPS technical approval", "note": "Blocked by NCR-003" },
+          { "offsetDays": 12, "task": "Factory acceptance test", "note": "Cannot proceed without approval" },
+          { "offsetDays": 22, "task": "Equipment dispatch", "note": "Linked procurement milestone" },
+          { "offsetDays": 41, "task": "Site energisation", "note": "Critical commissioning gate" }
+        ]
+      }
+    },
+    {
+      "id": "generator-acoustics",
+      "equipmentType": "Generator",
+      "finding": {
+        "id": "NCR-004",
+        "rfiId": "RFI-ME-014",
+        "title": "Generator sound level exceeds project limit",
+        "shortTitle": "Generator acoustic deviation",
+        "confidence": 96
+      },
+      "requirement": {
+        "id": "MECH-GEN-019",
+        "document": "Generator Performance Specification Rev B",
+        "page": 42,
+        "text": "Generator sound pressure level shall not exceed 85 dBA measured at 1 metre.",
+        "field": "sound_level_at_1m",
+        "label": "Sound level at 1 metre",
+        "operator": "<=",
+        "value": 85,
+        "unit": " dBA"
+      },
+      "submittal": {
+        "id": "SUB-GEN-044",
+        "product": "PowerCore G2500 Generator",
+        "document": "PowerCore G2500 Acoustic Datasheet Rev 1",
+        "page": 11,
+        "text": "Sound pressure level at 1 metre under rated load is 89 dBA.",
+        "field": "sound_level_at_1m",
+        "value": 89,
+        "unit": " dBA"
+      },
+      "scheduleImpact": {
+        "task": "Generator acoustic acceptance",
+        "taskId": "ME-184",
+        "startsInDays": 18,
+        "estimatedDelayDays": 6,
+        "affectedTasks": 3,
+        "criticalPath": false,
+        "costExposure": 720000,
+        "baseResponseDays": 7,
+        "delayAssumptions": [
+          { "days": 2, "label": "acoustic consultant review" },
+          { "days": 3, "label": "attenuator redesign" },
+          { "days": 1, "label": "approval" }
+        ],
+        "dependencyPath": [
+          { "offsetDays": 0, "task": "Acoustic compliance review", "note": "Blocked by NCR-004" },
+          { "offsetDays": 18, "task": "Generator factory test", "note": "Acoustic package required" },
+          { "offsetDays": 34, "task": "Generator delivery", "note": "Can proceed with approved mitigation" },
+          { "offsetDays": 52, "task": "Load-bank testing", "note": "Commissioning dependency" }
+        ]
+      }
+    },
+    {
+      "id": "crac-capacity",
+      "equipmentType": "CRAC",
+      "finding": {
+        "id": "NCR-005",
+        "rfiId": "RFI-ME-021",
+        "title": "CRAC sensible cooling capacity below requirement",
+        "shortTitle": "CRAC capacity deviation",
+        "confidence": 97
+      },
+      "requirement": {
+        "id": "MECH-CRAC-031",
+        "document": "Cooling Equipment Schedule Rev D",
+        "page": 33,
+        "text": "Each CRAC unit shall provide at least 150 kW sensible cooling capacity at design conditions.",
+        "field": "sensible_cooling_capacity",
+        "label": "Sensible cooling capacity",
+        "operator": ">=",
+        "value": 150,
+        "unit": " kW"
+      },
+      "submittal": {
+        "id": "SUB-CRAC-067",
+        "product": "ThermaFlow C150 CRAC",
+        "document": "ThermaFlow C150 Selection Data Rev 3",
+        "page": 8,
+        "text": "Net sensible cooling capacity at project design conditions is 142 kW.",
+        "field": "sensible_cooling_capacity",
+        "value": 142,
+        "unit": " kW"
+      },
+      "scheduleImpact": {
+        "task": "Cooling plant performance test",
+        "taskId": "CX-318",
+        "startsInDays": 25,
+        "estimatedDelayDays": 8,
+        "affectedTasks": 5,
+        "criticalPath": true,
+        "costExposure": 1350000,
+        "baseResponseDays": 7,
+        "delayAssumptions": [
+          { "days": 3, "label": "vendor reselection" },
+          { "days": 3, "label": "coordination review" },
+          { "days": 2, "label": "approval" }
+        ],
+        "dependencyPath": [
+          { "offsetDays": 0, "task": "CRAC technical approval", "note": "Blocked by NCR-005" },
+          { "offsetDays": 25, "task": "Cooling performance test", "note": "Approved capacity required" },
+          { "offsetDays": 37, "task": "White-space balancing", "note": "Depends on CRAC performance" },
+          { "offsetDays": 48, "task": "Integrated systems test", "note": "Critical commissioning gate" }
+        ]
+      }
+    },
+    {
+      "id": "pdu-current",
+      "equipmentType": "PDU",
+      "finding": {
+        "id": "CHK-006",
+        "rfiId": "RFI-EL-031",
+        "title": "PDU input current rating check",
+        "shortTitle": "PDU current rating",
+        "confidence": 99
+      },
+      "requirement": {
+        "id": "ELEC-PDU-018",
+        "document": "PDU Technical Schedule Rev C",
+        "page": 24,
+        "text": "The PDU input current rating shall equal 400 A.",
+        "field": "input_current_rating",
+        "label": "Input current rating",
+        "operator": "==",
+        "value": 400,
+        "unit": " A"
+      },
+      "submittal": {
+        "id": "SUB-PDU-052",
+        "product": "GridLine PDU-400",
+        "document": "GridLine PDU-400 Datasheet Rev 2",
+        "page": 6,
+        "text": "Rated input current is 400 A.",
+        "field": "input_current_rating",
+        "value": 400,
+        "unit": " A"
+      },
+      "scheduleImpact": {
+        "task": "PDU production release",
+        "taskId": "EL-222",
+        "startsInDays": 9,
+        "estimatedDelayDays": 4,
+        "affectedTasks": 2,
+        "criticalPath": false,
+        "costExposure": 320000,
+        "baseResponseDays": 7,
+        "delayAssumptions": [
+          { "days": 2, "label": "vendor response" },
+          { "days": 2, "label": "engineering review" }
+        ],
+        "dependencyPath": [
+          { "offsetDays": 0, "task": "PDU technical approval", "note": "Ready for approval" },
+          { "offsetDays": 9, "task": "Production release", "note": "Technical gate" },
+          { "offsetDays": 29, "task": "PDU delivery", "note": "Procurement milestone" },
+          { "offsetDays": 44, "task": "PDU energisation", "note": "Commissioning milestone" }
+        ]
+      }
+    },
+    {
+      "id": "fire-discharge",
+      "equipmentType": "Fire suppression",
+      "finding": {
+        "id": "CHK-007",
+        "rfiId": "RFI-FP-009",
+        "title": "Fire suppression discharge time check",
+        "shortTitle": "Agent discharge time",
+        "confidence": 98
+      },
+      "requirement": {
+        "id": "FIRE-GAS-012",
+        "document": "Clean Agent Fire Suppression Specification Rev B",
+        "page": 19,
+        "text": "The required clean-agent concentration shall be discharged within 10 seconds.",
+        "field": "agent_discharge_time",
+        "label": "Agent discharge time",
+        "operator": "<=",
+        "value": 10,
+        "unit": " s"
+      },
+      "submittal": {
+        "id": "SUB-FIRE-029",
+        "product": "SafeGas IG-541 System",
+        "document": "SafeGas Hydraulic Calculation Rev 1",
+        "page": 15,
+        "text": "Calculated discharge time to design concentration is 8 seconds.",
+        "field": "agent_discharge_time",
+        "value": 8,
+        "unit": " s"
+      },
+      "scheduleImpact": {
+        "task": "Room integrity and discharge test",
+        "taskId": "FP-144",
+        "startsInDays": 31,
+        "estimatedDelayDays": 5,
+        "affectedTasks": 2,
+        "criticalPath": false,
+        "costExposure": 410000,
+        "baseResponseDays": 7,
+        "delayAssumptions": [
+          { "days": 2, "label": "calculation revision" },
+          { "days": 2, "label": "specialist review" },
+          { "days": 1, "label": "approval" }
+        ],
+        "dependencyPath": [
+          { "offsetDays": 0, "task": "Hydraulic calculation approval", "note": "Ready for approval" },
+          { "offsetDays": 31, "task": "Room integrity test", "note": "Commissioning prerequisite" },
+          { "offsetDays": 35, "task": "Discharge simulation", "note": "Life-safety verification" },
+          { "offsetDays": 40, "task": "Cause-and-effect test", "note": "Integrated test gate" }
+        ]
+      }
+    }
+  ]
+}

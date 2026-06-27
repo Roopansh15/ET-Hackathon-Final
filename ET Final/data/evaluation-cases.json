@@ -1,0 +1,88 @@
+{
+  "cases": [
+    {
+      "id": "EV-001",
+      "query": "What UPS efficiency is required at 50% load?",
+      "expectedDocumentId": "DOC-SPEC-ELEC-C",
+      "expectedPage": 87
+    },
+    {
+      "id": "EV-002",
+      "query": "What efficiency did VoltEdge submit?",
+      "expectedDocumentId": "DOC-SUB-UPS-118",
+      "expectedPage": 14
+    },
+    {
+      "id": "EV-003",
+      "query": "When does the UPS factory acceptance test start?",
+      "expectedDocumentId": "DOC-SCHEDULE-L4-8",
+      "expectedPage": 6
+    },
+    {
+      "id": "EV-004",
+      "query": "Is an approved deviation already recorded?",
+      "expectedDocumentId": "DOC-RFI-LOG-12",
+      "expectedPage": 12
+    },
+    {
+      "id": "EV-005",
+      "query": "What is the cost exposure of late UPS approval?",
+      "expectedDocumentId": "DOC-COST-RISK-5",
+      "expectedPage": 10
+    },
+    {
+      "id": "EV-006",
+      "query": "What must be completed before integrated systems testing?",
+      "expectedDocumentId": "DOC-CX-UPS-1",
+      "expectedPage": 9
+    },
+    {
+      "id": "EV-007",
+      "query": "What generator sound level is allowed at one metre?",
+      "expectedDocumentId": "DOC-SPEC-GEN-B",
+      "expectedPage": 42
+    },
+    {
+      "id": "EV-008",
+      "query": "What generator sound level did PowerCore submit?",
+      "expectedDocumentId": "DOC-SUB-GEN-044",
+      "expectedPage": 11
+    },
+    {
+      "id": "EV-009",
+      "query": "What sensible cooling capacity is required for each CRAC unit?",
+      "expectedDocumentId": "DOC-SPEC-CRAC-D",
+      "expectedPage": 33
+    },
+    {
+      "id": "EV-010",
+      "query": "What sensible cooling capacity did ThermaFlow submit?",
+      "expectedDocumentId": "DOC-SUB-CRAC-067",
+      "expectedPage": 8
+    },
+    {
+      "id": "EV-011",
+      "query": "What PDU input current rating is required?",
+      "expectedDocumentId": "DOC-SPEC-PDU-C",
+      "expectedPage": 24
+    },
+    {
+      "id": "EV-012",
+      "query": "What current rating does the GridLine PDU provide?",
+      "expectedDocumentId": "DOC-SUB-PDU-052",
+      "expectedPage": 6
+    },
+    {
+      "id": "EV-013",
+      "query": "What is the maximum fire suppression discharge time?",
+      "expectedDocumentId": "DOC-SPEC-FIRE-B",
+      "expectedPage": 19
+    },
+    {
+      "id": "EV-014",
+      "query": "What discharge time does SafeGas calculate?",
+      "expectedDocumentId": "DOC-SUB-FIRE-029",
+      "expectedPage": 15
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPC Guardian Architecture</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-width: 1180px;
+        min-height: 760px;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #17202a;
+        background: #f3f6f7;
+      }
+      main { padding: 42px 52px; }
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        padding-bottom: 22px;
+        border-bottom: 2px solid #cfd8dc;
+      }
+      h1 { margin: 0; font-size: 36px; }
+      header p { margin: 7px 0 0; color: #60717c; font-size: 16px; }
+      .brand { color: #0b6e69; font-size: 18px; font-weight: 800; }
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 34px;
+        margin-top: 38px;
+      }
+      .stage {
+        position: relative;
+        min-height: 195px;
+        padding: 18px;
+        border: 1px solid #ccd6dc;
+        border-top: 4px solid #0b6e69;
+        border-radius: 6px;
+        background: #ffffff;
+      }
+      .stage:not(:last-child)::after {
+        position: absolute;
+        top: 87px;
+        right: -26px;
+        width: 17px;
+        height: 17px;
+        border-top: 3px solid #82919a;
+        border-right: 3px solid #82919a;
+        content: "";
+        transform: rotate(45deg);
+      }
+      .number {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 14px;
+        border-radius: 4px;
+        color: #ffffff;
+        background: #14212b;
+        font-weight: 800;
+      }
+      h2 { margin: 0 0 10px; font-size: 18px; }
+      .stage p { margin: 0; color: #566671; font-size: 14px; line-height: 1.5; }
+      .rails {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 18px;
+        margin-top: 28px;
+      }
+      .rail {
+        min-height: 112px;
+        padding: 17px 18px;
+        border-left: 4px solid #b42318;
+        background: #ffffff;
+      }
+      .rail:nth-child(2) { border-left-color: #9a6700; }
+      .rail:nth-child(3) { border-left-color: #17643a; }
+      .rail strong { display: block; margin-bottom: 7px; font-size: 16px; }
+      .rail span { color: #5d6b75; font-size: 14px; line-height: 1.45; }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 28px;
+        color: #60717c;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Evidence-to-action architecture</h1>
+          <p>Data-centre EPC project intelligence with deterministic safety controls</p>
+        </div>
+        <div class="brand">EPC GUARDIAN</div>
+      </header>
+      <section class="flow">
+        <article class="stage"><span class="number">1</span><h2>Project records</h2><p>Specifications, vendor submittals, schedules, test scripts, RFIs, and risk registers.</p></article>
+        <article class="stage"><span class="number">2</span><h2>Ingestion</h2><p>Parse content, preserve revision metadata, identify sections, and retain page references.</p></article>
+        <article class="stage"><span class="number">3</span><h2>Hybrid retrieval</h2><p>Combine keyword evidence with embeddings when configured. Preserve citations and refusal thresholds.</p></article>
+        <article class="stage"><span class="number">4</span><h2>Extract + compare</h2><p>AI structures field, operator, value, and unit. Deterministic rules calculate compliance.</p></article>
+        <article class="stage"><span class="number">5</span><h2>Project intelligence</h2><p>Model schedule, cost, commissioning readiness, effort, and supply-chain alerts.</p></article>
+        <article class="stage"><span class="number">6</span><h2>Controlled action</h2><p>Draft a cited RFI, request review, capture approval, and preserve the audit trail.</p></article>
+      </section>
+      <section class="rails">
+        <article class="rail"><strong>Evidence rail</strong><span>Every answer and finding carries document, revision, page, section, and quoted context.</span></article>
+        <article class="rail"><strong>Human decision rail</strong><span>No equipment approval, schedule change, or contractual communication occurs autonomously.</span></article>
+        <article class="rail"><strong>Evaluation rail</strong><span>14 labelled retrieval questions, 22 automated tests, citation coverage, and failure-case checks.</span></article>
+      </section>
+      <footer><span>Prototype: hybrid RAG when configured | Offline: keyword retrieval + local extraction | Human approval always required</span><span>ET AI Hackathon 2026</span></footer>
+    </main>
+  </body>
+</html>

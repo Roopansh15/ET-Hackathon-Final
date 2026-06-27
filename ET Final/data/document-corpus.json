@@ -1,0 +1,263 @@
+{
+  "documents": [
+    {
+      "id": "DOC-SPEC-ELEC-C",
+      "name": "Electrical Design Specification",
+      "revision": "C",
+      "type": "Project specification",
+      "status": "Ready",
+      "pages": 124,
+      "indexedAt": "2026-06-21T09:12:00+05:30",
+      "chunks": [
+        {
+          "page": 87,
+          "section": "8.4.2 UPS performance",
+          "text": "UPS module efficiency shall be at least 96.5% at 50% rated load in double-conversion mode. Values shall be demonstrated during factory acceptance testing."
+        },
+        {
+          "page": 88,
+          "section": "8.4.3 Battery autonomy",
+          "text": "The UPS battery system shall provide a minimum of 15 minutes autonomy at the design critical load, measured at end-of-life battery capacity."
+        },
+        {
+          "page": 91,
+          "section": "8.6 Redundancy",
+          "text": "The critical power topology shall maintain N+1 module redundancy during any single UPS module outage."
+        }
+      ]
+    },
+    {
+      "id": "DOC-SUB-UPS-118",
+      "name": "VoltEdge VX900 Technical Datasheet",
+      "revision": "2",
+      "type": "Vendor submittal",
+      "status": "Ready",
+      "pages": 32,
+      "indexedAt": "2026-06-21T09:14:00+05:30",
+      "chunks": [
+        {
+          "page": 14,
+          "section": "Performance data",
+          "text": "Double-conversion operating efficiency at 50% load is 95.2%. Eco mode efficiency is up to 98.4%."
+        },
+        {
+          "page": 18,
+          "section": "Battery configuration",
+          "text": "Configured battery autonomy is 18 minutes at the stated design critical load under beginning-of-life conditions."
+        },
+        {
+          "page": 22,
+          "section": "Module arrangement",
+          "text": "The proposed arrangement contains four active modules plus one redundant module, providing N+1 redundancy."
+        }
+      ]
+    },
+    {
+      "id": "DOC-SCHEDULE-L4-8",
+      "name": "Level 4 Commissioning Schedule",
+      "revision": "8",
+      "type": "Project schedule",
+      "status": "Ready",
+      "pages": 18,
+      "indexedAt": "2026-06-20T16:40:00+05:30",
+      "chunks": [
+        {
+          "page": 6,
+          "section": "Critical power procurement",
+          "text": "Activity CX-240, UPS Factory Acceptance Test, starts in 12 days and requires approved technical submittal SUB-UPS-118. It is on the project critical path."
+        },
+        {
+          "page": 7,
+          "section": "Logistics dependencies",
+          "text": "UPS dispatch depends on completion of CX-240. Site energisation depends on UPS delivery, installation, and pre-functional checks."
+        }
+      ]
+    },
+    {
+      "id": "DOC-CX-UPS-1",
+      "name": "UPS Integrated Systems Test Script",
+      "revision": "1",
+      "type": "Test procedure",
+      "status": "Ready",
+      "pages": 46,
+      "indexedAt": "2026-06-20T11:25:00+05:30",
+      "chunks": [
+        {
+          "page": 9,
+          "section": "Prerequisites",
+          "text": "An approved UPS technical submittal and completed factory acceptance test report are mandatory prerequisites before integrated systems testing."
+        },
+        {
+          "page": 21,
+          "section": "Efficiency verification",
+          "text": "Record input and output power at 25%, 50%, 75%, and 100% load. Compare measured efficiency with the approved project performance schedule."
+        }
+      ]
+    },
+    {
+      "id": "DOC-RFI-LOG-12",
+      "name": "Electrical RFI and Decision Log",
+      "revision": "12",
+      "type": "RFI log",
+      "status": "Ready",
+      "pages": 27,
+      "indexedAt": "2026-06-19T17:10:00+05:30",
+      "chunks": [
+        {
+          "page": 12,
+          "section": "Open decisions",
+          "text": "No approved deviation has been issued for requirement ELEC-UPS-042 or vendor submittal SUB-UPS-118."
+        },
+        {
+          "page": 18,
+          "section": "Historical decision RFI-EL-011",
+          "text": "A previous generator acoustic deviation was accepted only after the vendor submitted quantified impact, consultant recommendation, and client approval."
+        }
+      ]
+    },
+    {
+      "id": "DOC-COST-RISK-5",
+      "name": "Project Cost and Risk Register",
+      "revision": "5",
+      "type": "Risk register",
+      "status": "Ready",
+      "pages": 16,
+      "indexedAt": "2026-06-21T08:30:00+05:30",
+      "chunks": [
+        {
+          "page": 10,
+          "section": "Risk CR-017",
+          "text": "Late UPS technical approval may expose the project to nine calendar days of delay and INR 1,800,000 in combined expediting, supervision, and extended preliminaries."
+        }
+      ]
+    },
+    {
+      "id": "DOC-SPEC-GEN-B",
+      "name": "Generator Performance Specification",
+      "revision": "B",
+      "type": "Project specification",
+      "status": "Ready",
+      "pages": 68,
+      "indexedAt": "2026-06-21T10:05:00+05:30",
+      "chunks": [
+        {
+          "page": 42,
+          "section": "6.7 Acoustic performance",
+          "text": "Generator sound pressure level shall not exceed 85 dBA measured at 1 metre under rated load."
+        }
+      ]
+    },
+    {
+      "id": "DOC-SUB-GEN-044",
+      "name": "PowerCore G2500 Acoustic Datasheet",
+      "revision": "1",
+      "type": "Vendor submittal",
+      "status": "Ready",
+      "pages": 24,
+      "indexedAt": "2026-06-21T10:07:00+05:30",
+      "chunks": [
+        {
+          "page": 11,
+          "section": "Acoustic data",
+          "text": "PowerCore G2500 sound pressure level at 1 metre under rated load is 89 dBA."
+        }
+      ]
+    },
+    {
+      "id": "DOC-SPEC-CRAC-D",
+      "name": "Cooling Equipment Schedule",
+      "revision": "D",
+      "type": "Project specification",
+      "status": "Ready",
+      "pages": 52,
+      "indexedAt": "2026-06-21T10:12:00+05:30",
+      "chunks": [
+        {
+          "page": 33,
+          "section": "CRAC performance schedule",
+          "text": "Each CRAC unit shall provide at least 150 kW sensible cooling capacity at project design conditions."
+        }
+      ]
+    },
+    {
+      "id": "DOC-SUB-CRAC-067",
+      "name": "ThermaFlow C150 Selection Data",
+      "revision": "3",
+      "type": "Vendor submittal",
+      "status": "Ready",
+      "pages": 18,
+      "indexedAt": "2026-06-21T10:14:00+05:30",
+      "chunks": [
+        {
+          "page": 8,
+          "section": "Selected duty",
+          "text": "ThermaFlow C150 net sensible cooling capacity at project design conditions is 142 kW."
+        }
+      ]
+    },
+    {
+      "id": "DOC-SPEC-PDU-C",
+      "name": "PDU Technical Schedule",
+      "revision": "C",
+      "type": "Project specification",
+      "status": "Ready",
+      "pages": 39,
+      "indexedAt": "2026-06-21T10:18:00+05:30",
+      "chunks": [
+        {
+          "page": 24,
+          "section": "Electrical ratings",
+          "text": "The PDU input current rating shall equal 400 A."
+        }
+      ]
+    },
+    {
+      "id": "DOC-SUB-PDU-052",
+      "name": "GridLine PDU-400 Datasheet",
+      "revision": "2",
+      "type": "Vendor submittal",
+      "status": "Ready",
+      "pages": 14,
+      "indexedAt": "2026-06-21T10:20:00+05:30",
+      "chunks": [
+        {
+          "page": 6,
+          "section": "Input characteristics",
+          "text": "GridLine PDU-400 rated input current is 400 A."
+        }
+      ]
+    },
+    {
+      "id": "DOC-SPEC-FIRE-B",
+      "name": "Clean Agent Fire Suppression Specification",
+      "revision": "B",
+      "type": "Project specification",
+      "status": "Ready",
+      "pages": 45,
+      "indexedAt": "2026-06-21T10:23:00+05:30",
+      "chunks": [
+        {
+          "page": 19,
+          "section": "Agent discharge performance",
+          "text": "The required clean-agent concentration shall be discharged within 10 seconds."
+        }
+      ]
+    },
+    {
+      "id": "DOC-SUB-FIRE-029",
+      "name": "SafeGas Hydraulic Calculation",
+      "revision": "1",
+      "type": "Vendor submittal",
+      "status": "Ready",
+      "pages": 22,
+      "indexedAt": "2026-06-21T10:25:00+05:30",
+      "chunks": [
+        {
+          "page": 15,
+          "section": "Discharge calculation",
+          "text": "SafeGas IG-541 calculated discharge time to design concentration is 8 seconds."
+        }
+      ]
+    }
+  ]
+}
